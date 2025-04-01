@@ -1,0 +1,15 @@
+@import "../../assets/scss/base/variables";
+
+.tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	padding: 4px 8px;
+	height: 23px;
+	border-radius: 4px;
+	line-height: 1;
+	font-size: 12px;
+	background-color: $gray-light;
+	color: $dark;
+}

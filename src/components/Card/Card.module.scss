@@ -1,0 +1,142 @@
+@import "../../assets/scss/base/variables";
+
+//3 вариант
+
+.card {
+	position: relative;
+	background-color: $white;
+	border-radius: 8px;
+	padding: 47px 20px 20px 20px;
+	height: auto;
+	width: 100%;
+	max-width: 370px;
+	box-shadow: $shadow-lg;
+	text-align: center;
+}
+
+.iconWrapper {
+	display: flex;
+
+	position: absolute;
+	top: -20%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	width: 60px;
+	height: 60px;
+
+	background-color: $primary-light;
+	border-radius: 12px;
+	font-size: 25px;
+	justify-content: center;
+	align-items: center;
+	box-shadow: $shadow-sm;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 20px;
+	margin: 0px 0 12px;
+}
+
+.description {
+	font-size: 14px;
+	line-height: 100%;
+	color: $dark;
+	margin-bottom: 22px;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0;
+}
+
+.rating {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	color: $gray-dark;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.star {
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.score {
+	font-size: 14px;
+	font-weight: 500;
+	color: $gray-dark;
+}
+
+//.tag {
+//	background-color: $gray-light;
+//	color: $dark;
+//	padding: 4px 8px;
+//	border-radius: 4px;
+//	font-size: 12px;
+//	font-weight: 500;
+//}
+
+@media (max-width: $width-m) {
+	.card {
+		padding: 35px 15px 15px 15px;
+		width: 90%;
+		//min-height: 180px;
+		flex-grow: 1;
+	}
+
+	.iconWrapper {
+		width: 50px;
+		height: 50px;
+		font-size: 22px;
+	}
+
+	.title {
+		font-size: 18px;
+	}
+
+	.description {
+		font-size: 12px;
+	}
+
+}
+
+
+@media (max-width: $width-sm) {
+	.card {
+		padding: 47px 20px 20px 20px;
+		width: 90%;
+		max-width: none;
+		//min-height: 180px;
+		//flex-grow: 1;
+		text-align: center;
+	}
+
+	.iconWrapper {
+		width: 60px;
+		height: 60px;
+		font-size: 25px;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.description {
+		font-size: 14px;
+	}
+
+
+	.star {
+		font-size: 16px;
+	}
+
+	.score {
+		font-size: 14px;
+	}
+}

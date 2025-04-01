@@ -1,0 +1,58 @@
+@import "../../assets/scss/base/variables";
+
+.card {
+	position: relative;
+	background: $gray-light;
+	border-radius: 12px;
+	max-width: 370px; //should be fixed mna zher
+	height: 262px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.3s;
+	overflow: hidden;
+
+	.placeholder {
+		color: #adb0bd;
+		font-weight: 500;
+	}
+
+	.card-hover-content {
+		position: absolute;
+		inset: 0;
+		top: -2%; //использую проценты а не пиксели, можно даже удалить, но так более по дизайну будто бы
+		background: #2A324BB3;
+		color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+		opacity: 0;
+		transition: opacity 0.3s;
+		border-radius: 12px;
+
+		h1 {
+			font-size: 18px;
+		}
+		.tag {
+			color: $accent;
+			margin: 16px 0;
+			font-weight: 500;
+			font-size: 14px;
+		}
+
+		button {
+			background-color: $primary;
+			color: white;
+			border: none;
+			padding: 6px 8px;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	}
+
+	&:hover .card-hover-content {
+		opacity: 0.9; //70 procent po figma
+	}
+}

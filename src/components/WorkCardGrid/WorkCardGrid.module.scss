@@ -1,0 +1,23 @@
+@import "../../assets/scss/base/variables";
+
+
+
+//.maxContainer {
+//	display: flex;
+//	justify-content: center;
+//}
+
+.grid {
+	max-width: 1200px;
+	display: grid;
+	align-self: center;
+	grid-template-columns: repeat(auto-fit, minmax(370px, auto));
+
+	gap: 24px;
+	justify-content: center;
+
+
+	@media (max-width: $width-sm){
+		grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+	}
+}

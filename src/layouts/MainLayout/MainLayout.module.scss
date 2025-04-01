@@ -1,0 +1,60 @@
+@import "../../assets/scss/base/variables";
+
+.wrap {
+	//max-width: 1465px;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	//justify-content: flex-start;
+
+	justify-content: center;
+	//max-width: 1240px;
+	//padding-top: 60px;
+
+	&__header {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+		padding: 12px;
+
+		&Btn {
+			min-width: 90px;
+
+			& button {
+				width: 100%;
+			}
+		}
+	}
+
+	&__body {
+		flex: 1 1 auto;
+		height: inherit;
+		display: flex;
+		//justify-items: center;
+		//position: relative;
+		//overflow: visible;
+		//width: 100%;
+		//max-width: 1200px;
+
+		& > * {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__footer {
+		flex: 0 0 auto;
+		min-height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 300;
+		font-size: 14px;
+
+		//тут я не пока не понял, опасити есть ? Почему текст колор такой тусклый
+		color: $white;
+		background-color: $dark;
+	}
+}
