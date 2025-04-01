@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './Header.module.scss';
 
-interface NavLink {
-	name: string;
-	href: string;
-}
 
-const navLinks: NavLink[] = [
+const navLinks = [
 	{ name: 'Главная', href: '/' },
 	{ name: 'О нас', href: '/about' },
 	{ name: 'Услуги', href: '/service' },
@@ -20,15 +16,12 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ logo = 'CompanyName' }) => {
-	const [active, setActive] = useState<string>('Главная');
+	const [active, setActive] = useState(() => {
+		return localStorage.getItem('activeNav') || 'Главная';
+	});
 
-	// Load iz sohranen
-	useEffect(() => {
-		const saved = localStorage.getItem('activeNav');
-		if (saved) setActive(saved);
-	}, []);
 
-	//local sohranit
+	//componentDidUpdate
 	useEffect(() => {
 		localStorage.setItem('activeNav', active);
 	}, [active]);
@@ -43,12 +36,8 @@ const Header: React.FC<HeaderProps> = ({ logo = 'CompanyName' }) => {
 							<li key={link.name}>
 								<a
 									href={link.href}
-									className={clsx(styles.nav__item, {
-										[styles.active]: active === link.name,
-									})}
-									onClick={() => {
-										setActive(link.name);
-									}}
+									className={clsx(styles.nav__item, { [styles.active]: active === link.name })}
+									onClick={() => setActive(link.name)}
 								>
 									{link.name}
 								</a>
